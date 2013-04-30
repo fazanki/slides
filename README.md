@@ -1,0 +1,4 @@
+slides
+======
+
+yeoman_slides
