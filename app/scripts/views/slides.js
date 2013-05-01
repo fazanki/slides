@@ -10,7 +10,7 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 		},
 
 		renderAll: function() {
-			console.log(this.collection);
+			//console.log(this.collection);
 			this.$el.empty();
 			this.collection.each(this.render, this);
 		},
