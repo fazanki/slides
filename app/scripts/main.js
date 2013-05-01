@@ -1,3 +1,5 @@
+'use strict';
+
 require.config({
     paths: {
         jquery: '../components/jquery/jquery',
@@ -19,10 +21,12 @@ require.config({
             deps: ['jquery'],
             exports: 'jquery'
         }
+
          
     }
 });
 
 require(['views/app'], function(App){
     new App()
+    
 });
