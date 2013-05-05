@@ -1,0 +1,16 @@
+.slides {
+	height:100%;
+	width:100%;
+	display:table;
+	text-align:center;
+	position:absolute;
+}
+
+.slide {
+	display: table-cell;
+	vertical-align: middle;
+	position:relative;
+	padding:50px 200px;	
+	font-size: 50px;
+	font-family: 'Oswald', sans-serif;
+}

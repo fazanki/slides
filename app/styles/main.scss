@@ -1,6 +1,37 @@
+@import url("http://fonts.googleapis.com/css?family=Oswald:400,700");
+
+@import 'compass/css3';
+@import '../components/normalize-scss/_normalize';
+@import 'slides';
+
+* {
+	@include box-sizing(border-box);
+}
 
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
+html, body {
+	height:100%;
+	overflow:hidden;
+}
+
+body {
+	text-align: center;
+	color: #292929;
+}
+
+
+body {
+	background: rgb(242,246,248); /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(242,246,248,1) 0%, rgba(216,225,231,1) 50%, rgba(181,198,208,1) 51%, rgba(224,239,249,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(242,246,248,1)), color-stop(50%,rgba(216,225,231,1)), color-stop(51%,rgba(181,198,208,1)), color-stop(100%,rgba(224,239,249,1))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  rgba(242,246,248,1) 0%,rgba(216,225,231,1) 50%,rgba(181,198,208,1) 51%,rgba(224,239,249,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f6f8', endColorstr='#e0eff9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+h1, h2, h3, h4, h5 {
+	margin-top: 0;
 }

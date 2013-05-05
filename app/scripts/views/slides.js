@@ -38,7 +38,7 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 
 			newSlide = this.getNextSlide(slides);
 			//console.log( newSlide )
-			slides.css('position','absolute')// TEMPORARY
+			//slides.css('position','absolute')// TEMPORARY
 
 			this.animateToNewSlide(slides, newSlide, opts.direction);
 
@@ -75,7 +75,6 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 					$(this).css('top','0');
 
 					newSlide
-						.css('position','absolute') // TEMPORARY
 						.css('top', direction ==='next' ? '-100%' : '100%')
 						.animate({
 							top:0,
