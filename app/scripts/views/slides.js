@@ -6,7 +6,6 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 		el: $('.slides'),
 
 		initialize: function() {
-
 			this.currentSlideIndex = 1;
 			this.numSlides = this.collection.length;
 			this.transitionSpeed = 400;
@@ -15,6 +14,10 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 
 			App.Vent.on('init', this.hideAllButFirst, this);
 			App.Vent.on('changeSlide', this.changeSlide, this);
+		},
+
+		templates: function() {
+
 		},
 
 		hideAllButFirst: function() {
@@ -91,6 +94,7 @@ define(['backbone', 'views/slide'], function(Backbone, SlideView){
 
 		renderAll: function() {
 			//console.log(this.collection);
+			
 			this.$el.empty();
 			this.collection.each(this.render, this);
 		},

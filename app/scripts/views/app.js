@@ -21,7 +21,6 @@ define([
                 collection: new SlidesCollections(window.slides)
             });
 
-
             App.router = new MainRouter();
             Backbone.history.start();
         },

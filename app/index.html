@@ -18,13 +18,29 @@
         <!-- endbuild -->
     </head>
     <body>
-    <body>
-        <div  class="slides"></div>
+        <div  class="slides">
+            <script type='text/template' id='quote'>
+                <fiugure>
+                    <blockquote>
+                        <%= quote %>
+                    </blockquote>
+                    <figcaption>
+                        <cite> 
+                            <%= cite %>
+                        </cite>
+                    </figcption>
+                </figure>
+            </script>
+
+        </div>
 
         <!-- add slides here -->
         <script type="text/javascript" src="scripts/slides.js"></script>
         <!-- build:js scripts/main.js -->
         <script data-main="scripts/main" src="components/requirejs/require.js"></script>
         <!-- endbuild -->
+
+
+       
 </body>
 </html>

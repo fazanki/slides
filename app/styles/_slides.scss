@@ -22,4 +22,36 @@
 		}
 		
 	}
+
+	&.bullets{
+		li {
+			line-height: 1.6em;
+			text-align: left;
+		}
+	}
+
+	&.quote {
+		blockquote {
+			line-height: 1.6em;
+			text-align: left;
+			display: inline-block;
+			padding-bottom: 0;
+			&:after, &:before {
+				content: '\"';
+				color:#666;
+			}
+
+			&:before {
+				margin-left:-25px;
+			}
+		}
+
+		cite {
+			float:right;
+			color:#666;
+			&:before {
+				content: "-"
+			}
+		}
+	}
 }
