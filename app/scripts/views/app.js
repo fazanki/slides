@@ -16,13 +16,9 @@ define([
         el: 'body',
 
         initialize: function() {
-            var testCollection = [
-                {title: "My First Slide"},
-                {title: "My Second Slide"}
-            ];
-            
+            console.log(window.slides);
             new SlidesView({
-                collection: new SlidesCollections(testCollection)
+                collection: new SlidesCollections(window.slides)
             });
 
 

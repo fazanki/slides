@@ -35,3 +35,20 @@ body {
 h1, h2, h3, h4, h5 {
 	margin-top: 0;
 }
+
+h1 {
+	&.x-large {
+		text-align: left;
+		font-size:45px
+	}
+
+	&.large {
+		text-align: left;
+		font-size:60px;
+	}
+
+	&.normal {
+		font-size: 80px;
+
+	}
+}
