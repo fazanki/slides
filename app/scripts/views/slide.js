@@ -1,4 +1,4 @@
-define(['backbone'], function(Backbone){
+define(['backbone', 'helpers'], function(Backbone, Helpers){
 	
 	var Slide = Backbone.View.extend({
 		
@@ -11,21 +11,34 @@ define(['backbone'], function(Backbone){
 		// },
 
 		render: function() {
+			
+			var contentType = this.getContentType();
 
-			if ( this.model.get('image') ) {
-				this.renderImage();
-			} else if ( this.model.get('snippet') ) {
-				this.renderSnippet()
-			} else if ( this.model.get('quote') ) {
-				this.renderQuote();
-			} else if ( this.model.get('bullets') ) {
-				this.renderBullets();
-			} else {
-				this.renderHeading();
-			}
+			this['render'+Helpers.capitalize(contentType)]();
 
 		return this;
 		
+		},
+
+		getContentType: function() {
+
+			if ( this.model.get('image') ) {
+				return 'image';
+				//this.renderImage();
+			} else if ( this.model.get('snippet') ) {
+				return 'snippet';
+				//this.renderSnippet()
+			} else if ( this.model.get('quote') ) {
+				return 'quote';
+				//this.renderQuote();
+			} else if ( this.model.get('bullets') ) {
+				return 'bullets';
+				//this.renderBullets();
+			} else {
+				return 'heading';
+				//this.renderHeading();
+			}
+
 		},
 
 		renderHeading: function() {
