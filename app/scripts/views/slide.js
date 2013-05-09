@@ -14,9 +14,11 @@ define(['backbone'], function(Backbone){
 
 			if ( this.model.get('image') ) {
 				this.renderImage();
-			} else if ( this.model.get('quote')) {
+			} else if ( this.model.get('snippet') ) {
+				this.renderSnippet()
+			} else if ( this.model.get('quote') ) {
 				this.renderQuote();
-			} else if (this.model.get('bullets')) {
+			} else if ( this.model.get('bullets') ) {
 				this.renderBullets();
 			} else {
 				this.renderHeading();
@@ -31,6 +33,47 @@ define(['backbone'], function(Backbone){
 			this.$el.append(
 				'<h1 class="'+ size +'">' + this.model.get('title') + '</h1>'
 			);
+		},
+
+		renderSnippet: function() {
+			var self = this;
+			var snippet = this.model.get('snippet');
+			
+			if ( this.model.get('title') ) {
+				this.renderHeading()
+			}
+
+			if ( $.isPlainObject(snippet)) { /// IMPORTANT TO REMEMBER 
+				/// USING JQUERY ISPLAINOBJECT TO TO CHECK IF IS AN OBJECT
+
+				return _.each(snippet, function(snippetPath, heading) {
+					self.setSnippet(snippetPath, heading);
+				});
+
+			}
+
+			this.setSnippet(snippet);
+
+		},
+
+		setSnippet: function(snippetPath, heading) {
+			var self = this;
+			
+			var title = heading ? '<h1>' + heading + '</h1>' : '';
+			// if ( heading ) {
+			// 	self.$el.append('<h1>' + heading + '</h1>')
+			// }
+
+			$.get(snippetPath, function(snippet) {
+				self.$el
+					.addClass('snippet')
+					.append([
+						title,
+						'<pre class="prettyprint">' + _.escape(snippet) + '</pre>'
+					].join(''));
+				prettyPrint();
+			});
+
 		},
 
 		renderImage: function() {

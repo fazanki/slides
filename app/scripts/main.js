@@ -4,7 +4,8 @@ require.config({
     paths: {
         jquery: '../components/jquery/jquery',
         backbone: '../components/backbone/backbone',
-        underscore: '../components/underscore/underscore'
+        underscore: '../components/underscore/underscore',
+        prettify: '../components/google-code-prettify/src/prettify'
     },
     shim: {
         underscore: {
@@ -26,7 +27,7 @@ require.config({
     }
 });
 
-require(['views/app'], function(AppView){
+require(['views/app', 'prettify'], function(AppView){
     window.App = {
         Vent: _.extend({}, Backbone.Events)
     };
